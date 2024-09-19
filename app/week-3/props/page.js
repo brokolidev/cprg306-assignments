@@ -26,6 +26,8 @@ export default function PropsPage() {
 
     return (
         <main>
+            <StudentObjComp studentObj={studentOne} />
+
             <StudentComp
                 sName="Keven"
                 sAge="32"
@@ -38,7 +40,6 @@ export default function PropsPage() {
                 sCity={studentOne.address.city}
                 sProvince={studentOne.address.province} />
 
-            <StudentObjComp studentObj={studentOne} />
             <StudentObjComp studentObj={studentTwo} />
         </main>
     );

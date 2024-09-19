@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
         <h1>CPRG 306: Web Development 2 - Assignments</h1>
-        <h2>This is a list of contents</h2>
+        <h2>Course Example Links</h2>
         <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
             <li className={linkStyles}>
                 <Link href="/week-2" >Week 2</Link>

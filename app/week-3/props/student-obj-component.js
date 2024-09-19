@@ -10,7 +10,7 @@ export default function StudentObjComp({studentObj}) {
     } = studentObj;
 
     return (
-        <div>
+        <div className="bg-green-800 mb-10 text-white p-10">
             <h3>{studentName}</h3>
             <p>Age: {studentAge}</p>
             <p>{city}, {province}</p>
