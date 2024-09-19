@@ -7,15 +7,18 @@ export default function Home() {
     <main>
         <h1>CPRG 306: Web Development 2 - Assignments</h1>
         <h2>Course Example Links</h2>
-        <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+        <ul style={{listStyleType: "disc", paddingLeft: "20px"}}>
             <li className={linkStyles}>
-                <Link href="/week-2" >Week 2</Link>
+                <Link href="/week-2">Week 2</Link>
             </li>
             <li className={linkStyles}>
-                <Link href="/week-3/objects" >Objects</Link>
+                <Link href="/week-3/objects">Objects</Link>
             </li>
             <li className={linkStyles}>
                 <Link href="/week-3/props">Props</Link>
+            </li>
+            <li className={linkStyles}>
+                <Link href="/week-3">Week 3</Link>
             </li>
         </ul>
     </main>
