@@ -9,8 +9,13 @@ export const metadata = {
 export default function Page() {
 
 	return (
-		<main className="bg-amber-50 h-screen p-10 text-center">
-			<NewItem />
+		<main className="bg-amber-50 h-screen">
+			<Link href="/" className="p-5 inline-block">
+				&#8592; Go Back
+			</Link>
+			<div className="text-center">
+				<NewItem />
+			</div>
 		</main>
 	);
 }
