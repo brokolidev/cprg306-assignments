@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NewItem from "@/app/week-4/new-item";
+import NewItem from "@/app/week-5/new-item";
 
 export const metadata = {
 	title: 'Component & useState',
