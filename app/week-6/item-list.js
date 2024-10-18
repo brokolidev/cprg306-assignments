@@ -1,5 +1,7 @@
+"use client"
+
 import Item from "@/app/week-6/item";
-import useState from "react";
+import {useState} from "react";
 import items from "@/app/week-6/items.json";
 
 export default function ItemList() {
@@ -19,11 +21,21 @@ export default function ItemList() {
         // render items using map function
         // create sorting buttons for name and category
         // add onClick event to the buttons to change sortBy state variable
-        <div>
-            <button onClick={() => setSortBy('name')}>Sort by Name</button>
-            <button onClick={() => setSortBy('category')}>Sort by Category</button>
+        <div className={sortBy === 'name' ? 'bg-amber-500' : 'bg-fuchsia-500'}>
+            <button type="button" className="w-36 mt-4 mr-2 p-2 bg-blue-500 text-white
+                   font-semibold rounded-lg shadow-md hover:bg-blue-700 text-sm
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                    onClick={() => setSortBy('name')}>
+                Sort by Name
+            </button>
+            <button type="button" className="w-36 mt-4 p-2 bg-blue-500 text-white
+                   font-semibold rounded-lg shadow-md hover:bg-blue-700 text-sm
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                    onClick={() => setSortBy('category')}>
+                Sort by Category
+            </button>
             {sortedItems.map((item, index) => (
-                <Item key={index} name={item.name} quantity={item.quantity} category={item.category} />
+                <Item key={index} name={item.name} quantity={item.quantity} category={item.category}/>
             ))}
         </div>
     );
