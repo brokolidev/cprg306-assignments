@@ -24,10 +24,10 @@ export default function Page() {
                 Shopping List
             </h1>
             <div className="text-center">
-                <ItemList items={items} />
+                <NewItem onAddItem={handleAddItem}/>
             </div>
             <div className="text-center">
-                <NewItem onAddItem={handleAddItem} />
+                <ItemList items={items}/>
             </div>
         </main>
     );
