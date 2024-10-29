@@ -4,7 +4,7 @@ import Item from "@/app/week-8/item";
 import {useState} from "react";
 
 
-export default function ItemList({items}) {
+export default function ItemList({items, onItemSelect}) {
     // create sortBy state variable
     const [sortBy, setSortBy] = useState('name');
     const [grouped, setGrouped] = useState(false);
@@ -87,13 +87,19 @@ export default function ItemList({items}) {
                             <h2 className="text-lg font-bold text-white capitalize mt-2">{category}</h2>
                             <div className="flex flex-wrap">
                                 {itemsToDisplay[category].map((item) => (
-                                    <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category} />
+                                    <Item key={item.id}
+                                          onSelect={() => onItemSelect(item)}
+                                          name={item.name}
+                                          quantity={item.quantity}
+                                          category={item.category} />
                                 ))}
                             </div>
                         </div>
                     ))
                     : itemsToDisplay.map((item) => (
-                        <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category} />
+                        <Item key={item.id} name={item.name}
+                              onSelect={() => onItemSelect(item)}
+                              quantity={item.quantity} category={item.category} />
                     ))}
             </div>
         </div>

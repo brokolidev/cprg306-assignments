@@ -2,17 +2,30 @@
 
 import ItemList from "@/app/week-8/item-list";
 import NewItem from "@/app/week-8/new-item";
+import MealIdeas from "@/app/week-8/meal-ideas";
 import itemsData from "@/app/week-8/items.json";
 import {useState} from "react";
 
 import Link from "next/link";
 
+
 export default function Page() {
 
     const [items, setItems] = useState(itemsData);
 
+    const [selectedItemName, setSelectedItemName] = useState('');
+
     const handleAddItem = (item) => {
         setItems([...items, item]);
+    }
+
+    const handleItemSelect = (item) => {
+        // remove emoji from item name and remove after comma
+        let name = item.name.split(',')[0];
+
+        // Remove any emojis
+        name = name.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '').trim();
+        setSelectedItemName(name);
     }
 
     return (
@@ -27,8 +40,9 @@ export default function Page() {
                 <NewItem onAddItem={handleAddItem}/>
             </div>
             <div className="text-center">
-                <ItemList items={items}/>
+                <ItemList items={items} onItemSelect={handleItemSelect} />
             </div>
+            <MealIdeas ingredient={selectedItemName} />
         </main>
     );
 }
